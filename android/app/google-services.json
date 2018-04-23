@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "441610741415",
+    "firebase_url": "https://mmusocialrn.firebaseio.com",
+    "project_id": "mmusocialrn",
+    "storage_bucket": "mmusocialrn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441610741415:android:993302f43349aa53",
+        "android_client_info": {
+          "package_name": "com.mmu_social"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441610741415-jfcqtrotp0qssdbn1c5kqejmk661gtmo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqO_PpUnZhPJ0-N8fleglqADN9DNsmHEE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
