@@ -3,9 +3,7 @@ import {
   View,
   Image,
   StyleSheet,
-  Dimensions,
   ScrollView,
-  ListView,
   TouchableOpacity,
   Platform,
   FlatList
@@ -24,14 +22,9 @@ import {
   Icon,
   Right
 } from 'native-base';
-import { Col, Row, Grid } from "react-native-easy-grid";
 import firebase from 'react-native-firebase';
-import { Navigation } from "react-native-navigation";
-import MMULogo from '../../assets/img/mmu.png';
-//import LinearGradient from 'react-native-linear-gradient';
 import ProfilePic from '../../assets/img/profilePic.jpg';
 import Styles from '../../styles';
-import ListItem from '../../components/listItem/ListItem';
 import RNFetchBlob from 'react-native-fetch-blob';
 import ImagePicker from 'react-native-image-picker';
 import ListItem1 from '../../components/listItem/ListItem1';
@@ -40,8 +33,6 @@ const Blob = RNFetchBlob.polyfill.Blob;
 const fs = RNFetchBlob.fs;
 window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest;
 window.Blob = Blob;
-
-//<Button onPress={this.handleSignOut}></Button>
 
 let currentUser = null;
 
@@ -114,71 +105,34 @@ export default class Profile extends Component {
         this.setState({
           img: source
         });
-        //alert(this.state.img.uri.toString())
         uploadImage(this.state.img.uri.toString());
       }
     });
   };
 
-  /*async backgroundDisplay() {
-    const ref = await firebase.database().ref('users/' + this.state.currentUser);
-    ref.child('firstname').on('value', (snapshot) => {
-      alert(snapshot);
-    });
-  }*/
-
-  /*getImage1(path) {
-    firebase.storage().refFromURL(path).getDownloadURL().then((url) => {
-      this.setState({img: {uri: url}});
-    })
-  }*/
-
   _getBackground(userId) {
-     firebase.storage().ref('images/' + userId + '/background_pictures1')
+     firebase.storage().ref('images/' + userId + '/background_pictures')
       .getDownloadURL().then((url) => {
           this.setState({
             img: {uri: url}
           });
-        //alert(this.state.img.uri)
+
     }).catch(() => {
 
      });
   }
 
   _getAvatar(userId) {
-    firebase.storage().ref('images/' + userId + '/profile_pictures1')
+    firebase.storage().ref('images/' + userId + '/profile_pictures')
       .getDownloadURL().then((url) => {
       this.setState({
         avatar: {uri: url}
       });
-      //alert(this.state.img.uri)
+
     }).catch(() => {
 
     });
   }
-
-  _renderItem(task) {
-    return (
-      <ListItem task={task} />
-    );
-  }
-
-  /*backgroundDisplay = () => {
-    return this.state.img
-      ?
-      <View style={styles.background}>
-        <Image
-          style={styles.img}
-          source={{uri: this.state.img.uri}}
-        />
-      </View>
-        :
-      <LinearGradient
-        style={styles.background}
-        colors={['#4c669f', '#3b5998', '#192f6a']}
-      >
-      </LinearGradient>;
-  };*/
   backgroundDisplay = () => {
     return this.state.img
       ?
@@ -203,7 +157,7 @@ export default class Profile extends Component {
     const refDB = firebase.database();
     let posts = [];
     let like = [];
-    //alert(this.state.friends);
+
     refDB.ref(`users/${this.state.currentUser.uid}/posts`).on('value', (snap) => {
       posts = [];
       snap.forEach((child) => {

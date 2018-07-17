@@ -61,21 +61,6 @@ export default class ForgotPassword extends Component {
   };
 
   _handleAuth = () => {
-    /*const credential = firebase.auth.EmailAuthProvider.credential(this.state.currentUser.email, this.state.password);
-
-    firebase.auth().currentUser.reauthenticateWithCredential(credential).then(() => {
-      this._handleClose();
-    }).catch((err) => {
-      alert(err);
-    });*/
-    /*firebase.auth().signInWithEmailAndPassword(this.state.currentUser.email, this.state.email)
-      .then(() => {
-        this._handleClose();
-      })
-      .catch(function(error) {
-        //const errorCode = error.code;
-        alert(error);
-      });*/
     const ref = firebase.auth();
 
     this.setState({validation: true});

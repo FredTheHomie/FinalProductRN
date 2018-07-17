@@ -10,7 +10,7 @@ import {
   Container,
   Label
 } from 'native-base';
-import { Col, Row, Grid } from "react-native-easy-grid";
+import { Col, Grid } from "react-native-easy-grid";
 
 const LoginForm = props => (
   <View>

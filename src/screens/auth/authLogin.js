@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   View,
   Dimensions,
@@ -81,10 +80,6 @@ export default class AuthLogin extends Component<{}> {
     }, 0);
   };
 
-  /*_handleLogin = () => {
-    Maintab();
-  };*/
-
   _handleEmailChange = (text: string) => {
       if(validateEmail(text) === true){
         this.setState({
@@ -93,20 +88,19 @@ export default class AuthLogin extends Component<{}> {
         });
       }else
         this.setState({emailValid: false});
-    //}
   };
 
   _handlePasswordChange = (text: string) => {
-    //if(this.state.validation){
+
       if(validatePassword(text) === true){
-        //this.setState({email: text});
+
         this.setState({
           passwordValid: true,
           passwordForm: text
         });
       }else
         this.setState({passwordValid: false});
-   // }
+
   };
 
   _handleForgotPassword = () => {

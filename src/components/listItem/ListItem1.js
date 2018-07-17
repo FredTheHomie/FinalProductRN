@@ -148,7 +148,7 @@ class ListItem extends Component {
   };
 
   _getImage(userId) {
-    firebase.storage().ref('images/' + userId + '/profile_pictures1')
+    firebase.storage().ref('images/' + userId + '/profile_pictures')
       .getDownloadURL().then((url) => {
       this.setState({
         img: {uri: url}

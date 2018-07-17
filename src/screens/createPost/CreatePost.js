@@ -60,10 +60,6 @@ export default class CreatePost extends Component {
   };
 
   handleCreatePost = () => {
-    /*firebase.database().ref('users/' + this.state.user.uid + '/Friends').update({
-      //'qhqfWRIUKEfibgENQ7lvBFnZ22p2': true,
-      'tws2kzUCpHYFaP1LghadTyeeKXj2': true
-    });*/
     firebase.database().ref('users/' + this.state.user.uid + '/posts').push({
       post: this.state.text,
       time: firebase.database.ServerValue.TIMESTAMP,

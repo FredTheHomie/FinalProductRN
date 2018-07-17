@@ -107,7 +107,7 @@ export default class Settings extends Component {
   }
 
   _getImage(userId) {
-    firebase.storage().ref('images/' + userId + '/profile_pictures1')
+    firebase.storage().ref('images/' + userId + '/profile_pictures')
       .getDownloadURL().then((url) => {
       this.setState({
         img: {uri: url}
@@ -412,7 +412,8 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
   gradient: {
-    height: 150
+    height: 150,
+    backgroundColor: 'blue'
   },
   dp: {
   },

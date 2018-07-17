@@ -29,21 +29,6 @@ Navigation.registerComponent('mmu_social.FriendProfile', () => FriendProfile);
 
 // Start app
 
- /* Navigation.startTabBasedApp({
-    tabs: [
-      {
-        screen: 'mmu_social.Timeline',
-        label: 'Timeline',
-        title: 'Timeline'
-      },
-      {
-        screen: 'mmu_social.Profile',
-        label: 'Profile',
-        title: 'Profile'
-      }
-    ]
-  });*/
-
 Navigation.startSingleScreenApp({
   screen: {
     screen: 'mmu_social.AuthLogin',
